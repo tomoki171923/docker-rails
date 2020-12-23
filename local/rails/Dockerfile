@@ -11,8 +11,8 @@ COPY entrypoint.sh /usr/bin/
 
 # Install dependencies.(RUN = exec when docker image is created from dockerfile.)
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client \
+    #&& bundle install \
     && bundle update \
-    && bundle install \
     && chmod +x /usr/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]

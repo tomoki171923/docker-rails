@@ -71,5 +71,4 @@ yarn-debug.log*
 /local/rails/*
 !/local/rails/Dockerfile
 !/local/rails/database.yml.org
-!/local/rails/Gemfile
-!/local/rails/Gemfile.lock
+
