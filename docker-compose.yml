@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  rails:
+    container_name: "local_rails"
+    build: ./local/rails
+    volumes:
+      - ./local/rails:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    networks:
+      - front-tier
+      - back-tier
+
+  postgres:
+    image: postgres:9.4
+    container_name: "local_postgres"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - ./local/postgres/tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:
