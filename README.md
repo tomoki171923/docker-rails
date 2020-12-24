@@ -4,7 +4,7 @@
 
 Ruby : 2.6.5
 
-Rails : 5.2
+Rails : 5.x
 
 Postgres : 12.5
 
