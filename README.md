@@ -41,10 +41,16 @@ docker-compose down
 docker-compose up -d
 ~~~
 
+## Create sample rails app
 
+~~~
+docker-compose up -d
+docker exec local_rails rails generate scaffold user name:string age:integer area:string
+docker exec local_rails rake db:migrate
+~~~
 
-
-
+access 
+http://localhost:3000/users
 
 
 
