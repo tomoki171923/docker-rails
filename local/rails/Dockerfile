@@ -10,7 +10,8 @@ COPY Gemfile.lock ./
 COPY entrypoint.sh /usr/bin/
 
 # Install dependencies.(RUN = exec when docker image is created from dockerfile.)
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client vim less\
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client vim bash-completion \
+    && echo '. /usr/share/bash-completion/bash_completion' >> /etc/bash.bashrc \
     #&& bundle install \
     && bundle update \
     && chmod +x /usr/bin/entrypoint.sh
